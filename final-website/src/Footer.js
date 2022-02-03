@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import Body from './Body';
 
 export class Footer extends Component{
-    myname = 'Floyd';
     render() {
-        return <div><h2>This is {this.myname}'s footer</h2></div>
+        return <div><h2>This is {Body.value}'s footer</h2></div>
     }
 }
 
