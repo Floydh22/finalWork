@@ -5,8 +5,9 @@ function Body() {
     
 
     return <div>
+        Search for stock:
         <input value = {name} onInput={e=> setName(e.target.value)}/>
-        Name is set to: {name}</div>;
+        </div>;
 }
 
 export default Body;
