@@ -15,11 +15,13 @@
     align-items: stretch;
     justify-content: center;
     gap: 1em;
+    color: white;
 }
 .blocks-text
 {
     width: 50%;
     background-color: red;
+    color: white;
 }
 .blocks-pic{
     width: 50%;
