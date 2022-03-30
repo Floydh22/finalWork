@@ -3,7 +3,7 @@ import Body from './Body';
 
 export class Footer extends Component{
     render() {
-        return <div><h2>This is {Body.value}'s footer</h2></div>
+        return <div className='footer'>Floyd Haslett 2022</div>
     }
 }
 

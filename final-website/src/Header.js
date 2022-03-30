@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 
 function Header({myName}) {
-    return <header>
+    return <header className='header'>
       Learn React with {myName}
       </header>
       

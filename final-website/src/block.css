@@ -6,16 +6,76 @@
     align-content: space-around;
     gap: 1em;
     margin: 1em;
+    background-color: black;
+}
+.block{
+    width: 95%;
+    height: 200px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1em;
 }
 .blocks-text
 {
-    width: 45%;
-    height: 150px;
+    width: 50%;
     background-color: red;
 }
 .blocks-pic{
-    width: 45%;
-    height: 150px;
+    width: 50%;
     background-color: royalblue;
     
+}
+.blocks-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.button{
+    background-color: aqua;
+}
+.button-red{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.button-red:hover{
+    background-color: rgb(170, 7, 7);
+}
+.button-red:active{
+    background-color: rgb(170, 7, 7);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.button-green{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.button-green:hover{
+    background-color: rgb(5, 82, 5);
+}
+.button-green:active{
+    background-color: rgb(5, 82, 5);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
