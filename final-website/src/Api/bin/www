@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
-var MongoCLient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient;
 /**
  * Get port from environment and store in Express.
  */
@@ -15,13 +15,13 @@ var MongoCLient = require('mongodb').MongoClient;
 var port = normalizePort(process.env.PORT || '8000');
 app.set('port', port);
 
-MongoCLient.connect("mongodb+srv://hasl4119:TrafficLight@stockwebsite.wmvhs.mongodb.net/usersdb?retryWrites=true&w=majority",function(err, client){
+MongoClient.connect("mongodb+srv://hasl4119:TrafficLight@stockwebsite.wmvhs.mongodb.net/trafficlight?retryWrites=true&w=majority",function(err, client){
   if(err) throw err;
-  db = client.db("usersdb");
+  db = client.db;
   app.locals.db = db;
   start_server();
-  console.log("server and database started");
-})
+  console.log("Server up, database connected");
+});
 
 var server;
 function start_server(){
