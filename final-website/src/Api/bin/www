@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
-
+var MongoCLient = require('mongodb').MongoClient;
 /**
  * Get port from environment and store in Express.
  */
@@ -15,19 +15,26 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '8000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
+MongoCLient.connect("mongodb+srv://hasl4119:TrafficLight@stockwebsite.wmvhs.mongodb.net/usersdb?retryWrites=true&w=majority",function(err, client){
+  if(err) throw err;
+  db = client.db("usersdb");
+  app.locals.db = db;
+  start_server();
+  console.log("server and database started");
+})
 
-var server = http.createServer(app);
+var server;
+function start_server(){
+  server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+  /**
+   * Listen on provided port, on all network interfaces.
+   */
+  
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+}
 
 /**
  * Normalize a port into a number, string, or false.
