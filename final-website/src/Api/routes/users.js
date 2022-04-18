@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var lights = [
-  {"color": 'Red'},
-  {"color": 'Green'},
-  {"color": 'Off'}
-]
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.json(lights);
+  var db = req.app.locals.db;
+  db.collection("users").find({}, {projection: {_id:0, color: 1}}).toArray(function(err,result){
+    if(err) throw err;
+    res.json(result);
+  });
+
 });
 
 router.get('/:color', function(req, res, next) {
