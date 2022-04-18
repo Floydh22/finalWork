@@ -21,4 +21,14 @@ router.get('/:color', function(req, res, next) {
   res.send("Cannot find color");
 });
 
+router.post("/", function(req, res, next){
+  const color = {
+    "color": req.body.color
+  }
+
+  var db = req.app.locals.db;
+  db.collection("users").insertOne(color);
+  res.send("Color inserted");
+});
+
 module.exports = router;
