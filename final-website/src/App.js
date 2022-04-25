@@ -6,6 +6,7 @@ import './footer.css';
 import Blocks from './Blocks';
 import './header.css'
 
+
 function App() {
   return (
     <div className="App">

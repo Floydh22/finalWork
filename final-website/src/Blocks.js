@@ -1,10 +1,33 @@
 import React, { useState } from "react";
+import { set } from "./Api/app";
 import './block.css';
 
-
 function Blocks() {
-    const [lightColor, setColor] = useState("Off");
-    return <div className="container">
+    const [lightColor, setColor] = useState("");
+    const change_color = (color) =>{
+        var insert = {"color" : color}
+        fetch("http://localhost:8000/users/", 
+            {
+                method:"POST", 
+                body: JSON.stringify(insert),
+                headers: {
+                  "Content-Type": "application/json",
+                }
+            })  
+          .then(res => res.json())
+          .then(data => console.log(data))
+    }
+
+    const buttonClick = (color) => {
+
+        change_color(color);
+        setColor(color);
+    }
+
+
+
+    return (
+    <div className="container">
         <div className="block">
             <div className="blocks-text">
                   The light should be {lightColor}
@@ -15,12 +38,13 @@ function Blocks() {
         </div>
         <div className="block">
             <div className="blocks-buttons">
-                <button onClick={() => setColor("Green")} className="button-green">Make Light Green</button>
-                <button onClick={() => setColor("Off")} className="button-green">Turn Light Off</button>
-                <button onClick={() => setColor("Red")} className="button-red">Make Light Red</button>
+                <button onClick={() => change_color("Green")}className="button-green">Make Light Green</button>
+                <button onClick={() => change_color("Yellow")} className="button-green">Make Light Yellow</button>
+                <button onClick={() => buttonClick("Red")} className="button-red">Make Light Red</button>
             </div>
         </div>
     </div>
+    )
 
 }
 export default Blocks;
