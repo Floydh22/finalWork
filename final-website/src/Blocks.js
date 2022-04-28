@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { set } from "./Api/app";
 import './block.css';
 
 function Blocks() {
@@ -38,8 +37,8 @@ function Blocks() {
         </div>
         <div className="block">
             <div className="blocks-buttons">
-                <button onClick={() => change_color("Green")}className="button-green">Make Light Green</button>
-                <button onClick={() => change_color("Yellow")} className="button-green">Make Light Yellow</button>
+                <button onClick={() => buttonClick("Green")}className="button-green">Make Light Green</button>
+                <button onClick={() => buttonClick("Yellow")} className="button-green">Make Light Yellow</button>
                 <button onClick={() => buttonClick("Red")} className="button-red">Make Light Red</button>
             </div>
         </div>
