@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Body from './Body';
 
 export class Footer extends Component{
     render() {

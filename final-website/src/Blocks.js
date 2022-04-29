@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './block.css';
 
 function Blocks() {
+
     const [lightColor, setColor] = useState("");
     const change_color = (color) =>{
         var insert = {"color" : color}
