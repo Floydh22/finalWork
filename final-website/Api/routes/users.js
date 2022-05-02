@@ -4,7 +4,7 @@ var cors = require('cors');
 var corsoptions = {
     origin: "*",
   };
-// comment to push
+
 /* GET users listing. */
 router.get('/', cors(corsoptions), function(req, res, next) {
   var db = req.app.locals.db;
