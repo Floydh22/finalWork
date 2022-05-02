@@ -6,7 +6,7 @@ var corsoptions = {
   };
 // comment to push
 /* GET users listing. */
-router.get('/', cors(corsoptions), function(req, res, next) {
+router.get('/get', cors(corsoptions), function(req, res, next) {
   var db = req.app.locals.db;
 
   db.collection("users")
