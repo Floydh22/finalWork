@@ -8,7 +8,7 @@ function Blocks() {
         var insert = {"color" : color}
         fetch("https://final-work-drab.vercel.app/users/", 
             {
-                method:"GET", 
+                method:"POST", 
                 body: JSON.stringify(insert),
                 headers: {
                   "Content-Type": "application/json",
