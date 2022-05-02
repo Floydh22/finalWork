@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
+var cors = require('cors');
+var corsoptions = {
+    origin: "*",
+  };
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', cors(corsoptions), function(req, res, next) {
   var db = req.app.locals.db;
 
   db.collection("users")
@@ -15,7 +18,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post("/", function(req, res, next){
+router.post("/", cors(corsoptions), function(req, res, next){
   const color = req.body.color;
 
   var db = req.app.locals.db;
