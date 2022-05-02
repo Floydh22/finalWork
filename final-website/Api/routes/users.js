@@ -4,24 +4,22 @@ var cors = require('cors');
 var corsoptions = {
     origin: "*",
   };
-
-  
+// comment to push
 /* GET users listing. */
-router.route("/")
-  .get((req, res, next) => {
-    var db = req.app.locals.db;
+router.get('/get', cors(corsoptions), function(req, res, next) {
+  var db = req.app.locals.db;
 
-    db.collection("users")
-    .findOne()
-    .then(result => {
-      console.log(result);
-  
-      res.send(result.color);
-    })
-  }  
-)
-  .post((req, res, next) => {
-    const color = req.body.color;
+  db.collection("users")
+  .findOne()
+  .then(result => {
+    console.log(result);
+
+    res.send(result.color);
+  });
+});
+
+router.post("/", cors(corsoptions), function(req, res, next){
+  const color = req.body.color;
 
   var db = req.app.locals.db;
   db.collection("users").updateOne(
@@ -35,8 +33,8 @@ router.route("/")
       {upsert:true}
   );
   res.send("Color inserted");
-  }  
-)
+});
 
+router.options("/", cors());
 
 module.exports = router;
