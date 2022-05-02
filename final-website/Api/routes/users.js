@@ -1,9 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var corsoptions = {
-  origin: "*",
-  methods: ["GET","POST"]
-};
 
 
 /* GET users listing. */
