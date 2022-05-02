@@ -35,6 +35,4 @@ router.post("/", cors(corsoptions), function(req, res, next){
   res.send("Color inserted");
 });
 
-router.options("/", cors());
-
 module.exports = router;
