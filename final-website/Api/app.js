@@ -6,7 +6,6 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const { resolve } = require('path');
 
 var app = express();
 app.options('*', cors());
