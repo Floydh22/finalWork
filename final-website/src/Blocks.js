@@ -6,7 +6,7 @@ function Blocks() {
     const [lightColor, setColor] = useState("");
     const change_color = (color) =>{
         var insert = {"color" : color}
-        fetch("https://final-work-drab.vercel.app/users/", 
+        fetch("http://localhost:8000/users/", 
             {
                 method:"POST", 
                 body: JSON.stringify(insert),
